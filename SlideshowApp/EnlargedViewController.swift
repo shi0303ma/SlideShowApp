@@ -12,13 +12,13 @@ class EnlargedViewController: UIViewController {
     
     @IBOutlet weak var enlargedImageView: UIImageView!
     
-    var imageNum = 0
+    var enlargedImage = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        enlargedImageView.image = UIImage(named:"slide_\(imageNum).png")
+        enlargedImageView.image = UIImage(named:enlargedImage)
     }
 
     override func didReceiveMemoryWarning() {

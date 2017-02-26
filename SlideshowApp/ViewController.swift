@@ -16,14 +16,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var nextBtn: UIButton!
     
     var imageNum = 0
-    var images = ["slide_1", "slide_2", "slide_3", "slide_4", "slide_5", "slide_6"]
+    var images = ["slide_1.png", "slide_2.png", "slide_3.png", "slide_4.png", "slide_5.png", "slide_6.png"]
     var playing = false
     var timer: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        imageView.image = UIImage(named:"\(images[imageNum]).png")
+        imageView.image = UIImage(named:"\(images[imageNum])")
         playAndPauseBtn.setTitle("再生", for: UIControlState.normal)
     }
 
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let enlargedViewController:EnlargedViewController = segue.destination as! EnlargedViewController
         
-        enlargedViewController.imageNum = imageNum + 1
+        enlargedViewController.enlargedImage = "\(images[imageNum])"
         
         if playing == true {
             // ボタンのタイトルを再生にする
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         } else {
             imageNum = 0
         }
-        imageView.image = UIImage(named: "\(images[imageNum]).png")
+        imageView.image = UIImage(named: "\(images[imageNum])")
     }
     
     // 戻るボタン
@@ -70,7 +70,7 @@ class ViewController: UIViewController {
             imageNum = images.count - 1
         }
         
-        imageView.image = UIImage(named: "\(images[imageNum]).png")
+        imageView.image = UIImage(named: "\(images[imageNum])")
     }
     
     // 再生停止ボタン
@@ -108,7 +108,7 @@ class ViewController: UIViewController {
         } else {
             imageNum = 0
         }
-        imageView.image = UIImage(named: "\(images[imageNum]).png")
+        imageView.image = UIImage(named: "\(images[imageNum])")
     }
     
     @IBAction func unwind(segue: UIStoryboardSegue) {
