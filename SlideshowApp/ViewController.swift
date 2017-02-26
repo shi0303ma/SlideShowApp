@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        imageView.image = UIImage(named:"slide_1.png")
+        imageView.image = UIImage(named:"\(images[imageNum]).png")
         playAndPauseBtn.setTitle("再生", for: UIControlState.normal)
     }
 
